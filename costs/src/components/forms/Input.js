@@ -3,7 +3,7 @@ export default function Input({name, type, text, placeholder, handleOnChange, va
 	return (
 	<div className={style.input}>
 		<label htmlFor={name}>{text}:</label>
-		<input type={type} placeholder={placeholder} value={value} onChange={handleOnChange} />
+		<input type={type} name={name} id={name} placeholder={placeholder} onChange={handleOnChange} />
 	</div>
 	)
 }
