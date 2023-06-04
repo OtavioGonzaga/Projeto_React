@@ -1,0 +1,28 @@
+.navbar {
+	display: flex;
+	padding: 0 10%;
+	flex-direction: row;
+	justify-content: space-between;
+	height: 11%;
+	align-items: center;
+	background-color: #161616;
+}
+.list {
+	width: 30%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.list li:hover a {
+	color: #ffbb33;
+}
+.logo {
+	display: flex;
+	align-items: center;
+}
+.logo h2 {
+	margin-left: 10px;
+	letter-spacing: 1px;
+	font-weight: bold;
+	font-size: 55px;
+}
