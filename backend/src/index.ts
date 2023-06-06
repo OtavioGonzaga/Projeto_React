@@ -7,7 +7,7 @@ require('dotenv').config()
 app.use(cors({origin: 'http://localhost:3000'}))
 app.use(exprs.urlencoded({extended: true}))
 app.use(exprs.json())
-mongoose.connect('mongodb://0.0.0.0:27017/costs').then(() => console.log('Conectado ao MongoDB')).catch(err => console.log(err))
+//mongoose.connect('mongodb://0.0.0.0:27017/costs').then(() => console.log('Conectado ao MongoDB')).catch(err => console.log(err))
 app.get('/categories', (req, res) => {
 	res.json(categories.categories)
 })
