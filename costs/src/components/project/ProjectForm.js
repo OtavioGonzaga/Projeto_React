@@ -23,15 +23,14 @@ export default function ProjectForm({BtnText, handleSubmit, projectData}) {
 		}})
 	}
 	function submit(e) {
-		console.log(project)
 		e.preventDefault()
 		handleSubmit(project)
 	}
 	return (
 		<form onSubmit={submit}>
-			<Input text='Nome do Projeto' type='text' name='name' placeholder='Digite o nome do projeto...' handleOnChange={handleProject} />
-			<Input text='Orçamento do projeto' type='number' name='budget' placeholder='Orçamento total do projeto...' handleOnChange={handleProject} />
-			<Select text='Categoria do projeto' name='category' options={json? json : []} placeholder={json? 'Selecione uma categoria...' : 'Carregando...'} handleOnChange={handleCategory} />
+			<Input text='Nome do Projeto' type='text' name='name' placeholder='Digite o nome do projeto...' handleOnChange={handleProject} value={project.name? project.name : ''} />
+			<Input text='Orçamento do projeto' type='number' name='budget' placeholder='Orçamento total do projeto...' handleOnChange={handleProject} value={project.budget? project.budget : ''} />
+			<Select text='Categoria do projeto' name='category' options={json? json : []} placeholder={json? 'Selecione uma categoria...' : 'Carregando...'} handleOnChange={handleCategory} value={project.category? project.category.id : ''} />
 			<Button text={BtnText} />
 		</form>
 	)

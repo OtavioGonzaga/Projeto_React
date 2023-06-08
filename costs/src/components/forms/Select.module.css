@@ -14,3 +14,6 @@
 	padding: 10px 2px;
 	border: none;
 }
+.disabled {
+	color: rgb(181, 180, 180);
+}
