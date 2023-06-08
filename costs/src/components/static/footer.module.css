@@ -1,5 +1,7 @@
-footer {
+.footer {
 	display: flex;
+	flex-direction: column;
+	align-items: center;
 	background-color: #161616;
 	width: 100%;
 	height: 20%;

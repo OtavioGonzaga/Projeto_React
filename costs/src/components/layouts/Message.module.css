@@ -1,0 +1,28 @@
+@keyframes fadeOut {
+	50% {
+		opacity: 1;
+	}
+	100% {
+	  opacity: 0;
+	  position: absolute;
+	}
+}
+.message {
+	position: absolute;
+	width: 70%;
+	margin: 10px 0;
+	padding: 12px 5%;
+	border-radius: 10px;
+	font-weight: bolder;
+	animation: fadeOut 5s forwards;
+}
+.success {
+	background-color: #2f702f;
+	color: #00ad00;
+	border: 2px solid #00ad00;
+}
+.error {
+	background-color: #702f2f;;
+	color: #ff0000;
+	border: 3px solid #ff0000;
+}
