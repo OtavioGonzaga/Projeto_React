@@ -1,17 +1,18 @@
-//import {useNavigate} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 import style from './NewProject.module.css'
 import ProjectForm from '../project/ProjectForm'
 import axios from 'axios'
 export default function NewProject() {
-	//const history = useNavigate()
+	const history = useNavigate()
 	async function CreatePost(project) {
 		project.cost = 0
 		project.services = []
+		project.budget = Number(project.budget) || 0
 		const res = await axios.post("http://localhost:9074/createproject", project)
 		if (res.status === 200) {
-
+			history('/projetos', {message: 'Projeto criado com sucesso!'})
 		} else {
-
+			history('/', {message: 'Houve um erro ao criar o projeto...'})
 		}
 	}
 	return (

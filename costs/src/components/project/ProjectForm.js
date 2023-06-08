@@ -14,7 +14,11 @@ export default function ProjectForm({BtnText, handleSubmit, projectData}) {
 		data()
 	}, [])
 	function handleProject(e) {
-		setProject({...project, [e.target.name]: e.target.value})
+		if(e.target.name === 'budget' && (Number(e.target.value) < 0 || e.target.value.includes('e'))) {
+			project.budget = 0
+		} else {
+			setProject({...project, [e.target.name]: e.target.value})
+		}
 	}
 	function handleCategory(e) {
 		setProject({...project, category: {

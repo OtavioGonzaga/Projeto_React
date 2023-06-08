@@ -15,7 +15,7 @@ export default function App() {
 			<Routes>
 				<Route exact path='/' element={<Home />} />
 				<Route exact path='/contato' element={<Contact />} />
-				<Route exact path='/projeto' element={<Projects />} />
+				<Route exact path='/projetos' element={<Projects />} />
 				<Route exact path='/novoprojeto' element={<NewProject />} />
 			</Routes>
 		</Container>

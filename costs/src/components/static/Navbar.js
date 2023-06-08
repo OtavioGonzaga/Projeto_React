@@ -14,7 +14,7 @@ export default function Navbar() {
 				<ul className={style.list}>
 					<li><Link to="/">Home</Link></li>
 					<li><Link to="/contato">Contato</Link></li>
-					<li><Link to="/projeto">Projetos</Link></li>
+					<li><Link to="/projetos">Projetos</Link></li>
 					<li><Link to="/novoprojeto">Novo Projeto</Link></li>
 				</ul>
 			</nav>
