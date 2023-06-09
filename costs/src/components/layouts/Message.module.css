@@ -16,6 +16,9 @@
 	font-weight: bolder;
 	animation: fadeOut 5s forwards;
 }
+.message::first-letter {
+	text-transform: uppercase;
+}
 .success {
 	background-color: #2f702f;
 	color: #00ad00;
