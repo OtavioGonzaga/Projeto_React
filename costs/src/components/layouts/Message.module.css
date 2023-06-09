@@ -1,12 +1,3 @@
-@keyframes fadeOut {
-	50% {
-		opacity: 1;
-	}
-	100% {
-	  opacity: 0;
-	  position: absolute;
-	}
-}
 .message {
 	position: absolute;
 	width: 70%;
@@ -14,7 +5,11 @@
 	padding: 12px 5%;
 	border-radius: 10px;
 	font-weight: bolder;
-	animation: fadeOut 5s forwards;
+	display: flex;
+	justify-content: space-between;
+}
+.none {
+	display: none;
 }
 .message::first-letter {
 	text-transform: uppercase;
@@ -28,4 +23,7 @@
 	background-color: #702f2f;;
 	color: #ff0000;
 	border: 3px solid #ff0000;
+}
+.message svg:hover {
+	cursor: pointer;
 }
