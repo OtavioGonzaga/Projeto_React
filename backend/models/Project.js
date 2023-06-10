@@ -8,6 +8,9 @@ const Projects = new mongoose.Schema({
 		type: Number,
 		required: true
 	},
+	description: {
+		type: String
+	},
 	sevices: {
 		type: Array,
 		required: true

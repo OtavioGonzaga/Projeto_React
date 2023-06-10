@@ -3,6 +3,9 @@ import style from './Message.module.css'
 import {FaTimes} from "react-icons/fa";
 export default function Message({type, message}) {
 	const [visible, setVisible] = useState(true)
+	setTimeout(() => {
+		if (type === 'success') setVisible(false)
+	}, 4000)
 	return (
 		<>
 		{message && (

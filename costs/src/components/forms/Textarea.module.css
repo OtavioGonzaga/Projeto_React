@@ -1,0 +1,10 @@
+.label {
+	font-weight: bolder;
+}
+.textarea {
+	width: 97%;
+	resize: vertical;
+	height: 100px;
+	max-height: 300px;
+	margin: 2% 1.5%;
+}

@@ -1,0 +1,52 @@
+/* Cores categorias */
+.Desenvolvimento {
+	background-color: #00a4ba;
+}
+.Marketing {
+	background-color: #ffbb33;
+}
+.Design {
+	background-color: #834383;
+}
+.Infraestrutura {
+	background-color: #ffc579;
+}
+/* Estilos */
+.container {
+	margin-top: 20px;
+	width: 320px;
+	height: 200px;
+	border: 2px solid #3a3a3a;
+	padding: 1% 2%;
+	border-radius: 3px;
+}
+.content {
+	margin: 5% 0;
+	height: 60%;
+	overflow: auto;
+	overflow-wrap: break-word;
+}
+.container .top {
+	color: #ffbb33;
+	display: flex;
+	padding: 2% 5%;
+	width: 90%;
+	margin: 0 ;
+	background-color: #3a3a3a;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+.category {
+	flex: 100%;
+	display: flex;
+	align-items: center;
+}
+.category span {
+	width: 5px;
+	height: 5px;
+	margin: 0 8px;
+	border-radius: 10px;
+}
+.category small {
+	color: #c3c3c3;
+}

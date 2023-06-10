@@ -23,10 +23,10 @@ app.post('/createproject', (req, res) => {
 	let verification = _FormProjectValidation2.default.call(void 0, req.body.name, req.body.budget, req.body.category)
 	if (verification.length === 0) {
 		new Project(req.body).save().then(() => {
-			res.sendStatus(200)
+			res.status(200).send()
 		}).catch(err => {
 			console.log(err)
-			res.sendStatus(500)
+			res.status(500).send()
 		})
 	} else {
 		res.json(verification)
@@ -37,7 +37,7 @@ app.get('/projects', (req, res) => {
 		res.send(prj)
 	}).catch(err => {
 		console.log(err)
-		res.sendStatus(500)	
+		res.status(500).send()
 	})
 })
 const port = process.env.PORT
