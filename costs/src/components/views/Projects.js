@@ -12,7 +12,7 @@ export default function Projects() {
 			setProjects(res.data)
 		}).catch(err => {
 			console.log(err)
-			history('/', {state: {message: ['Houve um erro ao carregar os projetos...'], type: 'error'}})
+			history('/', {state: {message: 'Houve um erro ao carregar os projetos...', type: 'error'}})
 		})
 	}, [history])
 	return (
@@ -26,7 +26,7 @@ export default function Projects() {
 				<h3 className={style.noProjects}>Ainda não há projetos...</h3>
 			)}
 			{projects.map(prj => (
-				<ProjectView prj={prj} />
+				<ProjectView prj={prj} key={prj._id} />
 			))}
 		</section>
 		</>

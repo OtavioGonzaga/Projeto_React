@@ -2,8 +2,6 @@
 	padding: 2% 0;
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
-	min-width: 60%;
 	height: auto;
 }
 .noProjects {

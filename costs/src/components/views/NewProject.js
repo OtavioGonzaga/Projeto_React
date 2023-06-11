@@ -11,11 +11,11 @@ export default function NewProject() {
 		const res = await axios.post("http://localhost:9074/createproject", project)
 		console.log(res.data)
 		if (res.status === 200) {
-			history('/projetos', {state: {message: ['Projeto criado com sucesso!'], type:'success'}})
+			history('/projetos', {state: {message: 'Projeto criado com sucesso!', type:'success'}})
 		} else if (res.status === 500) {
-			history('/', {state: {message: ['Houve um erro no servidor...'], type:'error'}})
+			history('/', {state: {message: 'Houve um erro no servidor...', type:'error'}})
 		} else {
-			history('/novoprojeto', {state: {message: res.data, type: 'error'}})
+			history('/novoprojeto', {state: {message: res.data.join(), type: 'error'}})
 		}
 	}
 	return (

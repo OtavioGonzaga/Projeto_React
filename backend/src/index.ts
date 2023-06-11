@@ -40,5 +40,11 @@ app.get('/projects', (req, res) => {
 		res.status(500).send()
 	})
 })
+app.post('/delete', (req, res) => {
+	Project.findByIdAndDelete(req.body.id).then(doc => res.status(200).send()).catch((err) => {
+		console.log(err)
+		res.status(500).send()
+	})
+})
 const port = process.env.PORT
 app.listen(port, () => console.log('Servidor ativo na porta ' + port))
