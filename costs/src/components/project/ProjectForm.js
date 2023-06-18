@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 import axios from 'axios'
 import Button from '../forms/SubmitButton'
 import Input from '../forms/Input'
@@ -7,11 +7,13 @@ import Textarea from '../forms/Textarea'
 export default function ProjectForm({BtnText, handleSubmit, projectData}) {
 	const [project, setProject] = useState(projectData || {})
 	const [json, setJson] = useState(false)
-	axios.get('http://localhost:9074/categories').then(res => {
-		setJson(res.data)
-	}).catch(err => {
-		console.error(err)
-	})
+	useEffect(() => {
+		axios.get('http://localhost:9074/categories').then(res => {
+			setJson(res.data)
+		}).catch(err => {
+			console.error(err)
+		})
+	}, [])
 	function handleProject(e) {
 		if(e.target.name === 'budget' && (Number(e.target.value) < 0 || e.target.value.includes('e'))) {
 			project.budget = 0

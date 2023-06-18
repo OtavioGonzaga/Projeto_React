@@ -1,6 +1,6 @@
 import {useNavigate} from 'react-router-dom'
 import Loading from '../layouts/Loading.js'
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 import style from "./Projects.module.css"
 import axios from 'axios'
 import LinkButton from '../layouts/LinkButton'
@@ -9,25 +9,24 @@ export default function Projects() {
 	const [projects, setProjects] = useState([])
 	const [loading, setLoading] = useState(true)
 	const history = useNavigate()
-	async function loadProjects() {
+	useEffect(() => {
 		axios.get('http://localhost:9074/projects').then(res => {
-				setProjects(res.data)
-				setLoading(false)
+			setProjects(res.data)
+			setLoading(false)
 		}).catch(err => {
-			console.log(err)
-			history('/', {state: {message: 'Houve um erro ao carregar os projetos...', type: 'error'}})
+			console.error(err)
 		})
-	}
-	if (loading) loadProjects() 
+	}, [])
 	function redirect(id) {
-		history('/edit?id=' + id)
+		history('/projetos/' + id)
 	}
 	function Delete(id) {
 		axios.post('http://localhost:9074/delete', {id: id}).then((res) => {
 			if (res.status === 500) console.log('Error')
 			if (res.status === 200) {
-				history('.', {state: {message: 'Projeto removido com sucesso!', type: 'success'}})
-				loadProjects()
+				setLoading(true)
+				setProjects([])
+				history('.', {state: {message: 'Projeto deletado com sucesso!', type: 'success'}})
 			}
 		})
 	}

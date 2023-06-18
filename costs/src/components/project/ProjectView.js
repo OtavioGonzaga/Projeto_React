@@ -1,7 +1,6 @@
 import Button from "./Button"
 import style from "./ProjectView.module.css"
 export default function ProjectView({prj, handleDelete, handleEdit}) {
-
 	return (
 		<div className={style.container}>
 			<div className={style.top}>

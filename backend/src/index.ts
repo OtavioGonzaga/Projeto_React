@@ -2,7 +2,7 @@
 import exprs from 'express'
 import cors from 'cors'
 import mongoose from 'mongoose'
-import categories from '../models/categories.json'
+import {categories} from '../models/categories.json'
 //Helpers
 import FormProjectValidation from './helpers/FormProjectValidation'
 //Models
@@ -17,7 +17,7 @@ app.use(exprs.json())
 mongoose.connect('mongodb://0.0.0.0:27017/costs').then(() => console.log('Conectado ao MongoDB')).catch(err => console.log(err))
 //Rotas
 app.get('/categories', (req, res) => {
-	res.json(categories.categories)
+	res.json(categories)
 })
 app.post('/createproject', (req, res) => {
 	let verification: string[] = FormProjectValidation(req.body.name, req.body.budget, req.body.category)
@@ -33,8 +33,8 @@ app.post('/createproject', (req, res) => {
 	}
 })
 app.get('/projects', (req, res) => {
-	Project.find().lean().then(prj => {
-		res.send(prj)
+	Project.find(req.query.id? {_id: req.query.id} : {}).lean().then(prj => {
+		res.json(prj)
 	}).catch(err => {
 		console.log(err)
 		res.status(500).send()
