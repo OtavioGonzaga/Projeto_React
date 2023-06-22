@@ -16,7 +16,7 @@ export default function Projects() {
 		}).catch(err => {
 			console.error(err)
 		})
-	}, [])
+	}, [projects])
 	function redirect(id) {
 		history('/projetos/' + id)
 	}
@@ -25,7 +25,7 @@ export default function Projects() {
 			if (res.status === 500) console.log('Error')
 			if (res.status === 200) {
 				setLoading(true)
-				setProjects([])
+                setProjects([])
 				history('.', {state: {message: 'Projeto deletado com sucesso!', type: 'success'}})
 			}
 		})

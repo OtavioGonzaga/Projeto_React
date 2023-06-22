@@ -1,21 +1,26 @@
-import {useEffect, useState } from 'react';
+import { useState, useEffect } from 'react'
 import style from './Message.module.css'
-import {FaTimes} from "react-icons/fa";
-import { useNavigate } from 'react-router-dom';
-export default function Message({type, message}) {
+import { FaTimes } from "react-icons/fa"
+import { useLocation } from 'react-router-dom'
+export default function Message() {
+	const location = useLocation()
+	const [type, setType] = useState()
+	const [message, setMessage] = useState()
 	const [visible, setVisible] = useState(true)
-	const history = useNavigate()
-	useEffect(()=> {
-		setVisible(true)
-	}, [history])
+	useEffect(() => {
+		if(location.state) {
+			setType(location.state.type)
+			setMessage(location.state.message)
+		}
+	}, [location, location.state])
 	setTimeout(() => {
-		if (type === 'success') setVisible(false)
-	}, 4000)
+		setVisible(false)
+	}, 5000)
 	return (
 		<>
-		{message && (
+		{message && visible && (
 			<>
-			<div className={`${style.message} ${style[type]} ${visible? '': style.none}`}>{message} <FaTimes onClick={() => setVisible(false)}/></div>
+			<div className={`${style.message} ${style[type]}`}>{message} <FaTimes onClick={() => setVisible(false)}/></div>
 			</>
 		)}
 		</>

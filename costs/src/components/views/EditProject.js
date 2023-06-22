@@ -19,6 +19,15 @@ export default function EditProject() {
 	function toggleProjectForm() {
 		setShowProjectForm(!showProjectForm)
 	}
+	function EditProps(prj) {
+		console.log(prj)
+		axios.post('http://localhost:9074/editprj', prj).then(() => {
+			toggleProjectForm()
+			setProject(prj)
+		}).catch(err => {
+			console.error(err)
+		})
+	}
 	return (
 		<section className={style.edit}>
 			{project ? (
@@ -28,7 +37,9 @@ export default function EditProject() {
 					<button onClick={toggleProjectForm}>{showProjectForm? 'Fechar' : 'Editar Projeto'}</button>
 				</div>
 				{showProjectForm ? (
-					<ProjectForm BtnText='Editar' />
+					<section className={style.form_edit}>
+						<ProjectForm BtnText='Editar' handleSubmit={EditProps} projectData={project} />	
+					</section>
 				) : (
 					<div className={style.details}>
 						<p><span>Categoria:</span> {project.category.name}</p>
