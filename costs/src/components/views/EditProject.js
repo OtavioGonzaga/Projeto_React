@@ -1,10 +1,11 @@
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import style from './EditProject.module.css'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import Loading from '../layouts/Loading'
 import ProjectForm from '../project/ProjectForm'
 export default function EditProject() {
+	const history = useNavigate()
 	const [project, setProject] = useState()
 	const [showProjectForm, setShowProjectForm] = useState(false)
 	const {id} = useParams()
@@ -16,17 +17,16 @@ export default function EditProject() {
 			setProject({name: 'error'})
 		})
 	}, [id])
-	function toggleProjectForm() {
-		setShowProjectForm(!showProjectForm)
-	}
 	function EditProps(prj) {
-		console.log(prj)
-		axios.post('http://localhost:9074/editprj', prj).then(() => {
-			toggleProjectForm()
-			setProject(prj)
-		}).catch(err => {
-			console.error(err)
-		})
+		if (prj !== project) {
+			axios.post('http://localhost:9074/editprj', prj).then(res => {
+				setProject(res.data)
+				history('.', {state: {message: 'Projeto editado com sucesso', type: 'success'}})
+				setShowProjectForm(false)
+			}).catch(err => {
+				console.error(err)
+			})
+		}
 	}
 	return (
 		<section className={style.edit}>
@@ -34,12 +34,12 @@ export default function EditProject() {
 				<>
 				<div className={style.tittle}>
 					<h2>Projeto: {project.name}</h2>
-					<button onClick={toggleProjectForm}>{showProjectForm? 'Fechar' : 'Editar Projeto'}</button>
+					<button onClick={() => setShowProjectForm(!showProjectForm)}>{showProjectForm? 'Fechar' : 'Editar Projeto'}</button>
 				</div>
 				{showProjectForm ? (
-					<section className={style.form_edit}>
+					<div className={style.form_edit}>
 						<ProjectForm BtnText='Editar' handleSubmit={EditProps} projectData={project} />	
-					</section>
+					</div>
 				) : (
 					<div className={style.details}>
 						<p><span>Categoria:</span> {project.category.name}</p>

@@ -32,11 +32,11 @@ export default function ProjectForm({BtnText, handleSubmit, projectData}) {
 		handleSubmit(project)
 	}
 	return (
-		<form onSubmit={submit}>
+		<form onSubmit={submit} onKeyDown={e => e.key === 'Enter' ?? submit(e)}>
 			<Input text='Nome do Projeto' type='text' name='name' placeholder='Digite o nome do projeto...' handleOnChange={handleProject} value={project.name ?? ''} />
 			<Input text='Orçamento do projeto' type='number' name='budget' placeholder='Orçamento total do projeto...' handleOnChange={handleProject} value={project.budget? project.budget : ''} />
 			<Select text='Categoria do projeto' name='category' options={json? json : []} placeholder={json? 'Selecione uma categoria...' : 'Carregando...'} handleOnChange={handleCategory} value={project.category? project.category.id : ''} />
-			<Textarea name='description' label='Descrição do projeto' placeholder='Digite a descrição do projeto... (opcional)' handleOnChange={handleProject} />
+			<Textarea name='description' label='Descrição do projeto' placeholder='Digite a descrição do projeto... (opcional)' handleOnChange={handleProject} text={project.description} />
 			<Button text={BtnText} />
 		</form>
 	)

@@ -41,14 +41,13 @@ app.get('/projects', (req, res) => {
 	})
 })
 app.post('/editprj', (req, res) => {
-	console.log(req.body)
-	Project.updateOne({_id: req.body.id}, req.body).then(() => res.status(200).send()).catch(err => {
+	Project.findByIdAndUpdate(req.body._id, req.body, {new: true}).then(data => res.json(data)).catch(err => {
 		console.error(err)
 		res.status(500).send()
 	})
 })
 app.post('/delete', (req, res) => {
-	Project.findByIdAndDelete(req.body.id).then(doc => res.status(200).send()).catch((err) => {
+	Project.findByIdAndDelete(req.body.id).then(() => res.status(200).send()).catch(err => {
 		console.log(err)
 		res.status(500).send()
 	})

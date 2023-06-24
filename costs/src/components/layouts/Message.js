@@ -8,21 +8,20 @@ export default function Message() {
 	const [message, setMessage] = useState()
 	const [visible, setVisible] = useState(true)
 	useEffect(() => {
-		if(location.state) {
+		setVisible(true)
+		if (location.state) {
 			setType(location.state.type)
 			setMessage(location.state.message)
 		}
-	}, [location, location.state])
-	setTimeout(() => {
-		setVisible(false)
-	}, 5000)
+	}, [location.state])
+	useEffect(() => {
+		if (visible) setTimeout(() => {
+            setVisible(false)
+        }, 5000)
+	}, [visible])
 	return (
 		<>
-		{message && visible && (
-			<>
-			<div className={`${style.message} ${style[type]}`}>{message} <FaTimes onClick={() => setVisible(false)}/></div>
-			</>
-		)}
+		{message && visible && <div className={`${style.message} ${style[type]}`}>{message} <FaTimes onClick={() => setVisible(false)}/></div>}
 		</>
 	)
 }
