@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react'
 import axios from 'axios'
-import Button from '../forms/SubmitButton'
+import SubmitButton from '../forms/SubmitButton'
 import Input from '../forms/Input'
 import Select from '../forms/Select'
 import Textarea from '../forms/Textarea'
@@ -37,7 +37,7 @@ export default function ProjectForm({BtnText, handleSubmit, projectData}) {
 			<Input text='Orçamento do projeto' type='number' name='budget' placeholder='Orçamento total do projeto...' handleOnChange={handleProject} value={project.budget? project.budget : ''} />
 			<Select text='Categoria do projeto' name='category' options={json? json : []} placeholder={json? 'Selecione uma categoria...' : 'Carregando...'} handleOnChange={handleCategory} value={project.category? project.category.id : ''} />
 			<Textarea name='description' label='Descrição do projeto' placeholder='Digite a descrição do projeto... (opcional)' handleOnChange={handleProject} text={project.description} />
-			<Button text={BtnText} />
+			<SubmitButton text={BtnText} />
 		</form>
 	)
 }

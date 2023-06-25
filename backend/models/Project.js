@@ -11,7 +11,7 @@ const Projects = new mongoose.Schema({
 	description: {
 		type: String
 	},
-	sevices: {
+	services: {
 		type: Array,
 		required: true
 	},

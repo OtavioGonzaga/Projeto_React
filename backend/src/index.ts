@@ -52,5 +52,15 @@ app.post('/delete', (req, res) => {
 		res.status(500).send()
 	})
 })
+app.post('/services', (req, res) => {
+	console.log(req.body)
+	Project.findByIdAndUpdate(req.body._id, req.body, {new: true}).then(data => {
+		console.log(data)
+		res.json(data)
+	}).catch(err => {
+        console.error(err)
+        res.status(500).send()
+    })
+})
 const port = process.env.PORT
 app.listen(port, () => console.log('Servidor ativo na porta ' + port))
