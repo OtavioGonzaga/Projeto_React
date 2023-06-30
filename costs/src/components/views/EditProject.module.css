@@ -1,0 +1,65 @@
+.edit {
+	padding: 2% 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	flex: 100%;
+	align-items: center;
+	border-bottom: #333333 1px solid;
+}
+.container .btn {
+	width: 15%;
+	background-color: #333333;
+	text-align: center;
+	color: white;
+	padding: 1%;
+}
+.container .btn:hover {
+	color: #ffbb33;
+	cursor: pointer;
+}
+.container h2 {
+	background-color: #333333;
+	color: white;
+	padding: 1%;
+	color: #ffbb33;
+}
+.details {
+	flex: 100%;
+	padding: 2%;
+}
+.details p {
+	margin: 5px 0;
+}
+.details span {
+	font-weight: bolder;
+}
+.form {
+	margin: 15px 0;
+	display: flex;
+	width: 100%; 
+	justify-content: center;
+}
+.form form {
+	width: 50%;
+}
+.form h3 {
+	color: #333333;
+	font-size: 30px;
+	align-self: center;
+	justify-self: center;
+}
+.serv {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+}
+.serv .details {
+	flex: 33%;
+}

@@ -1,0 +1,16 @@
+.button {
+	padding: 6px;
+	border: 1px solid black;
+	color: white;
+	margin: 0 10px;
+}
+.button:hover {
+	cursor: pointer;
+	border-color: white;
+}
+.delete {
+	background-color: #ff2929;
+}
+.edit {
+	background-color: #ffb319;
+}

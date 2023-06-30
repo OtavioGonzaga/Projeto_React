@@ -1,0 +1,29 @@
+.message {
+	position: absolute;
+	width: 70%;
+	margin: 10px 0;
+	padding: 12px 5%;
+	border-radius: 10px;
+	font-weight: bolder;
+	display: flex;
+	justify-content: space-between;
+}
+.none {
+	display: none;
+}
+.message::first-letter {
+	text-transform: uppercase;
+}
+.success {
+	background-color: #2f702f;
+	color: #00ad00;
+	border: 2px solid #00ad00;
+}
+.error {
+	background-color: #702f2f;;
+	color: #ff0000;
+	border: 3px solid #ff0000;
+}
+.message svg:hover {
+	cursor: pointer;
+}
