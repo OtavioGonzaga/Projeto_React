@@ -1,4 +1,4 @@
 import style from './SubmitButton.module.css'
-export default function Button({text}) {
+export default function SubmitButton({text}) {
 	return <button className={style.button} type='submit'>{text}</button>
 }

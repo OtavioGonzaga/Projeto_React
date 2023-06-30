@@ -7,8 +7,15 @@ export default function NewProject() {
 	async function CreatePost(project) {
 		project.cost = 0
 		project.services = []
-		const res = await axios.post("http://localhost:9074/createproject", project)
-		console.log(res.statusText)
+		project.budget = Number(project.budget) || 0
+		const res = await axios.post("https://api.render.com/deploy/srv-cid2j2lph6esg7flhaq0?key=k028bCP7yKU/createproject", project)
+		if (res.status === 200) {
+			history('/projetos', {state: {message: 'Projeto criado com sucesso!', type:'success'}})
+		} else if (res.status === 500) {
+			history('/', {state: {message: 'Houve um erro no servidor...', type:'error'}})
+		} else {
+			history('/novoprojeto', {state: {message: res.data.join(), type: 'error'}})
+		}
 	}
 	return (
 		<section className={style.section}>

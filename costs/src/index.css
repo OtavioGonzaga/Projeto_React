@@ -2,8 +2,9 @@
 * {
 	margin: 0;
 	padding: 0;
-	border: 0;
+	border: none;
 	font-family: 'Open Sans', sans-serif;
+	outline: none;
 }
 html, body, #root {
 	height: 100%;
@@ -16,4 +17,22 @@ ul {
 a {
 	text-decoration: none;
 	color: white
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+::-webkit-scrollbar {
+	width: 10px;
+	border-radius: 10px;
+	background-color: #161616;
+  }
+::-webkit-scrollbar-thumb {
+	background-color: #555;
+	border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+	background-color: #666;
 }
