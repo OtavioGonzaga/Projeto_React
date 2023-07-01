@@ -8,7 +8,7 @@ export default function NewProject() {
 		project.cost = 0
 		project.services = []
 		project.budget = Number(project.budget) || 0
-		const res = await axios.post("http://localhost:9074/createproject", project)
+		const res = await axios.post("http://localhost:9074/createproject", project) //TODO
 		if (res.status === 200) {
 			history('/projetos', {state: {message: 'Projeto criado com sucesso!', type:'success'}})
 		} else if (res.status === 500) {

@@ -13,7 +13,7 @@ export default function EditProject() {
 	const { id } = useParams()
 
 	useEffect(() => {
-		axios.get('http://localhost:9074/projects?id=' + id).then(prj => {
+		axios.get('http://localhost:9074/projects?id=' + id).then(prj => { //TODO
 			setProject(prj.data[0])
 		}).catch(err => {
 			console.error(err)
@@ -23,7 +23,7 @@ export default function EditProject() {
 
 	function EditProps(prj) {
 		if (prj !== project) {
-			axios.post('http://localhost:9074/editprj', prj).then(res => {
+			axios.post('http://localhost:9074/editprj', prj).then(res => { // TODO
 				setProject(res.data)
 				history('.', {state: {message: 'Projeto editado com sucesso!', type: 'success'}})
 				setShowProjectForm(false)
@@ -40,7 +40,7 @@ export default function EditProject() {
 
 	function submit(prj) {
 		setProject({...project, services: project.services.push(prj)})
-		axios.post('http://localhost:9074/services', project).then(response => {
+		axios.post('http://localhost:9074/services', project).then(response => { //TODO
 			setShowServicesForm(false)
 			if (response.status === 200) {
 				setProject(response.data)

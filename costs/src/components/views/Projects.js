@@ -10,7 +10,7 @@ export default function Projects() {
 	const [loading, setLoading] = useState(true)
 	const history = useNavigate()
 	useEffect(() => {
-		axios.get('http://localhost:9074/projects').then(res => {
+		axios.get('http://localhost:9074/projects').then(res => { //TODO
 			setProjects(res.data)
 			setLoading(false)
 		}).catch(err => {
@@ -21,7 +21,7 @@ export default function Projects() {
 		history('/projetos/' + id)
 	}
 	function Delete(id) {
-		axios.post('http://localhost:9074/delete', {id: id}).then((res) => {
+		axios.post('http://localhost:9074/delete', {id: id}).then((res) => { //TODO
 			if (res.status === 500) console.log('Error')
 			if (res.status === 200) {
 				setLoading(true)
