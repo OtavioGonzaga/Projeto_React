@@ -11,7 +11,7 @@ const Project = _mongoose2.default.model('projects')
 //configurações
 const app = _express2.default.call(void 0, )
 require('dotenv').config()
-app.use(_cors2.default.call(void 0, {origin: 'http://localhost:3000'}))
+app.use(_cors2.default.call(void 0, {origin: 'https://otaviogonzaga.github.io'}))
 app.use((req, res, next) => {
 	// Configurando cabeçalhos CORS
 	res.header('Access-Control-Allow-Origin', 'https://otaviogonzaga.github.io'); // Permitindo acesso de qualquer origem
