@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/github.io/Projeto_React/static/css/main.2611b2ac.css",
-    "main.js": "/github.io/Projeto_React/static/js/main.972b3dca.js",
-    "static/media/savings.svg": "/github.io/Projeto_React/static/media/savings.25a5174d3c0ce57522d68f3ba58b7407.svg",
-    "index.html": "/github.io/Projeto_React/index.html",
-    "main.2611b2ac.css.map": "/github.io/Projeto_React/static/css/main.2611b2ac.css.map",
-    "main.972b3dca.js.map": "/github.io/Projeto_React/static/js/main.972b3dca.js.map"
+    "main.css": "/Projeto_React/static/css/main.2611b2ac.css",
+    "main.js": "/Projeto_React/static/js/main.0f6a9fd5.js",
+    "static/media/savings.svg": "/Projeto_React/static/media/savings.25a5174d3c0ce57522d68f3ba58b7407.svg",
+    "index.html": "/Projeto_React/index.html",
+    "main.2611b2ac.css.map": "/Projeto_React/static/css/main.2611b2ac.css.map",
+    "main.0f6a9fd5.js.map": "/Projeto_React/static/js/main.0f6a9fd5.js.map"
   },
   "entrypoints": [
     "static/css/main.2611b2ac.css",
-    "static/js/main.972b3dca.js"
+    "static/js/main.0f6a9fd5.js"
   ]
 }
