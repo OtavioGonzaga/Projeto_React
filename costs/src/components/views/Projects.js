@@ -10,7 +10,7 @@ export default function Projects() {
 	const [loading, setLoading] = useState(true)
 	const history = useNavigate()
 	useEffect(() => {
-		axios.get('http://localhost:9074/projects').then(res => { //TODO
+		axios.get('https://costs-api-bw5a.onrender.com/projects').then(res => { //TODO
 			setProjects(res.data)
 			setLoading(false)
 		}).catch(err => {
@@ -21,7 +21,7 @@ export default function Projects() {
 		history('/projetos/' + id)
 	}
 	function Delete(id) {
-		axios.post('http://localhost:9074/delete', {id: id}).then((res) => { //TODO
+		axios.post('https://costs-api-bw5a.onrender.com/delete', {id: id}).then((res) => { //TODO
 			if (res.status === 500) console.log('Error')
 			if (res.status === 200) {
 				setLoading(true)

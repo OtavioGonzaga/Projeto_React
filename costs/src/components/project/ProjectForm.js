@@ -8,7 +8,7 @@ export default function ProjectForm({BtnText, handleSubmit, projectData}) {
 	const [project, setProject] = useState(projectData || {})
 	const [json, setJson] = useState(false)
 	useEffect(() => {
-		axios.get('http://localhost:9074/categories').then(res => {
+		axios.get('https://costs-api-bw5a.onrender.com/categories').then(res => {
 			setJson(res.data)
 		}).catch(err => {
 			console.error(err)

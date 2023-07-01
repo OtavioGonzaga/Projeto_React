@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/OtavioGonzaga/Projeto_React/static/css/main.2611b2ac.css",
-    "main.js": "/OtavioGonzaga/Projeto_React/static/js/main.3f84e800.js",
+    "main.js": "/OtavioGonzaga/Projeto_React/static/js/main.45a697d0.js",
     "static/media/savings.svg": "/OtavioGonzaga/Projeto_React/static/media/savings.25a5174d3c0ce57522d68f3ba58b7407.svg",
     "index.html": "/OtavioGonzaga/Projeto_React/index.html",
     "main.2611b2ac.css.map": "/OtavioGonzaga/Projeto_React/static/css/main.2611b2ac.css.map",
-    "main.3f84e800.js.map": "/OtavioGonzaga/Projeto_React/static/js/main.3f84e800.js.map"
+    "main.45a697d0.js.map": "/OtavioGonzaga/Projeto_React/static/js/main.45a697d0.js.map"
   },
   "entrypoints": [
     "static/css/main.2611b2ac.css",
-    "static/js/main.3f84e800.js"
+    "static/js/main.45a697d0.js"
   ]
 }

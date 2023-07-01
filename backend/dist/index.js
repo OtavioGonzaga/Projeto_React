@@ -14,7 +14,7 @@ require('dotenv').config()
 app.use(_cors2.default.call(void 0, {origin: 'http://localhost:3000'}))
 app.use(_express2.default.urlencoded({extended: true}))
 app.use(_express2.default.json())
-_mongoose2.default.connect('mongodb://0.0.0.0:27017/costs').then(() => console.log('Conectado ao MongoDB')).catch(err => console.log(err))
+_mongoose2.default.connect(`${process.env.DBATLAS}`).then(() => console.log('Conectado ao MongoDB')).catch(err => console.log(err))
 //Rotas
 app.get('/categories', (req, res) => {
 	res.json(_categoriesjson.categories)
