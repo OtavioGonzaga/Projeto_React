@@ -12,6 +12,14 @@ const Project = mongoose.model('projects')
 const app = exprs()
 require('dotenv').config()
 app.use(cors({origin: 'http://localhost:3000'}))
+app.use((req, res, next) => {
+	// Configurando cabeçalhos CORS
+	res.header('Access-Control-Allow-Origin', 'http://localhost:3000'); // Permitindo acesso de qualquer origem
+	res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE'); // Permitindo todos os métodos HTTP
+	res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept'); // Permitindo todos os cabeçalhos
+  
+	next();
+  });
 app.use(exprs.urlencoded({extended: true}))
 app.use(exprs.json())
 mongoose.connect(`${process.env.DBATLAS}`).then(() => console.log('Conectado ao MongoDB')).catch(err => console.log(err))
