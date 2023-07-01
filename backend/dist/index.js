@@ -14,7 +14,7 @@ require('dotenv').config()
 app.use(_cors2.default.call(void 0, {origin: 'http://localhost:3000'}))
 app.use((req, res, next) => {
 	// Configurando cabeçalhos CORS
-	res.header('Access-Control-Allow-Origin', 'http://localhost:3000'); // Permitindo acesso de qualquer origem
+	res.header('Access-Control-Allow-Origin', 'https://otaviogonzaga.github.io'); // Permitindo acesso de qualquer origem
 	res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE'); // Permitindo todos os métodos HTTP
 	res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept'); // Permitindo todos os cabeçalhos
   
