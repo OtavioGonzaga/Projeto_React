@@ -11,7 +11,7 @@ const Project = mongoose.model('projects')
 //configurações
 const app = exprs()
 require('dotenv').config()
-app.use(cors({origin: 'http://localhost:3000'}))
+app.use(cors({origin: 'https://otaviogonzaga.github.io'}))
 app.use((req, res, next) => {
 	// Configurando cabeçalhos CORS
 	res.header('Access-Control-Allow-Origin', 'https://otaviogonzaga.github.io'); // Permitindo acesso de qualquer origem
